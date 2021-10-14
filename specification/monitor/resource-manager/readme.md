@@ -717,6 +717,9 @@ swagger-to-sdk:
     after_scripts:
       - bundle install && rake arm:regen_all_profiles['azure_mgmt_monitor']
   - repo: azure-resource-manager-schemas
+  - repo: azure-sdk-for-go-track2
+  - repo: azure-sdk-for-js-track2
+  - repo: azure-sdk-for-net-track2
 ```
 
 ## Python
@@ -836,70 +839,6 @@ directive:
     where: $.paths
     reason: 'Operations API is defined in a separate swagger spec for Microsoft.Insights namespace (https://github.com/Azure/azure-rest-api-specs/blob/master/specification/monitor/resource-manager/Microsoft.Insights/stable/2015-04-01/operations_API.json)'
     
-```
-
-``` yaml ($(go) && !$(track2) && $(tag) == 'package-2021-07') || $(csharp) || $(validation) || $(typescript)
-directive:
-- from: activityLogAlerts_API.json
-  where: $.definitions
-  transform: delete $["Resource"]
-  reason: Missing kind, etag
-- from: activityLogAlerts_API.json
-  where: $.definitions
-  transform: delete $["ErrorResponse"]
-  reason: Incompatible values (2020-10-01)
-- from: activityLogAlerts_API.json
-  where: $.definitions
-  transform: delete $["AzureResource"]
-  reason: Incompatible values (2020-10-01)
-- from: activityLogAlerts_API.json
-  where: $.definitions
-  transform: delete $["ActionGroup"]
-  reason: Incompatible values (2020-10-01)
-```
-
-``` yaml !$(python) && !$(go) && !$(java) && ($(tag) == 'package-2021-04' || $(tag) == 'package-2021-07')
-directive:
-- from: scheduledQueryRule_API.json
-  where: $.parameters
-  transform: delete $["ResourceGroupNameParameter"]
-  reason: ResourceGroupNameParameter is taken from v2/types.json
-- from: activityLogAlerts_API.json
-  where: $.parameters
-  transform: delete $["ResourceGroupNameParameter"]
-  reason: ResourceGroupNameParameter is taken from v2/types.json
-- from: guestDiagnosticSettings_API.json
-  where: $.parameters
-  transform: delete $["ResourceGroupNameParameter"]
-  reason: ResourceGroupNameParameter is taken from v2/types.json
-- from: guestDiagnosticSettingsAssociation_API.json
-  where: $.parameters
-  transform: delete $["ResourceGroupNameParameter"]
-  reason: ResourceGroupNameParameter is taken from v2/types.json
-- from: privateLinkScopes_API.json
-  where: $.parameters
-  transform: delete $["ResourceGroupNameParameter"]
-  reason: ResourceGroupNameParameter is taken from v2/types.json
-- from: autoscale_API.json
-  where: $.parameters
-  transform: delete $["ResourceGroupNameParameter"]
-  reason: ResourceGroupNameParameter is taken from v2/types.json
-- from: alertRules_API.json
-  where: $.parameters
-  transform: delete $["ResourceGroupNameParameter"]
-  reason: ResourceGroupNameParameter is taken from v2/types.json
-- from: alertRulesIncidents_API.json
-  where: $.parameters
-  transform: delete $["ResourceGroupNameParameter"]
-  reason: ResourceGroupNameParameter is taken from v2/types.json
-- from: actionGroups_API.json
-  where: $.parameters
-  transform: delete $["ResourceGroupNameParameter"]
-  reason: ResourceGroupNameParameter is taken from v2/types.json
-- from: metricAlert_API.json
-  where: $.parameters
-  transform: delete $["ResourceGroupNameParameter"]
-  reason: ResourceGroupNameParameter is taken from v2/types.json
 ```
 
 ### Tag: profile-hybrid-2019-03-01
