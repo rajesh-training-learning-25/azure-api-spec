@@ -1363,6 +1363,10 @@
           },
           "description": "Authorization parameters"
         },
+        "tenantId": {
+          "type": "string",
+          "description": "Tenant ID that the Authorization can be used within"
+        },
         "error": {
           "description": "",
           "$ref": "#/definitions/AuthorizationError"
