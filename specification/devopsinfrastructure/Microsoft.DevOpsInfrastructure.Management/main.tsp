@@ -25,6 +25,11 @@ enum Versions {
   @useDependency(Azure.ResourceManager.Versions.v1_0_Preview_1)
   @useDependency(Azure.Core.Versions.v1_0_Preview_2)
   `2024-04-04-preview`,
+
+  /** 2024-07-01-preview preview version */
+  @useDependency(Azure.ResourceManager.Versions.v1_0_Preview_1)
+  @useDependency(Azure.Core.Versions.v1_0_Preview_2)
+  `2024-07-01-preview`,
 }
 
 model Pool is TrackedResource<PoolProperties> {
@@ -408,7 +413,16 @@ interface Pools {
     Pool,
     LroHeaders = Azure.Core.Foundations.RetryAfterHeader
   >;
-  update is ArmResourcePatchAsync<Pool, PoolProperties>;
+  @sharedRoute
+  @renamedFrom(Versions.`2024-04-04-preview`, "update")
+  @removed(Versions.`2024-07-01-preview`)
+  updateOld is ArmResourcePatchAsync<Pool, PoolProperties>;
+
+  @sharedRoute
+  @added(Versions.`2024-07-01-preview`)
+  @parameterVisibility
+  update is ArmCustomPatchAsync<Pool, Pool>;
+
   delete is ArmResourceDeleteWithoutOkAsync<Pool>;
   listByResourceGroup is ArmResourceListByParent<Pool>;
   listBySubscription is ArmListBySubscription<Pool>;
@@ -721,7 +735,7 @@ model ImageProperties {}
 
 @parentResource(Image)
 @doc("An image version object")
-model ImageVersion is ProxyResource<ImageVersionProperties> {
+model ImageVersion is ProxyResource<VersionProperties> {
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-name-pattern" "existing api"
   @doc("The name of the image version.")
   @key("imageVersionName")
@@ -733,7 +747,7 @@ model ImageVersion is ProxyResource<ImageVersionProperties> {
 
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-provisioning-state" "No ProvisioningState"
 @doc("Details of the ImageVersionProperties.")
-model ImageVersionProperties {
+model VersionProperties {
   @doc("Version of the image.")
   version: string;
 }
