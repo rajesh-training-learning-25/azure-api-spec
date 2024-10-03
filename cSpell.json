@@ -48,6 +48,21 @@
     ],
     "overrides": [
         {
+            "filename": "**/specification/azurearcdata/resource-manager/Microsoft.AzureArcData/**/*.json",
+            "words": [
+                "azurearcdata"
+            ]
+        },
+        {
+            "filename": "**/specification/azurearcdata/resource-manager/Microsoft.AzureArcData/preview/**/*.json",
+            "words": [
+                "SSRS",
+                "SSAS",
+                "SSIS",
+                "PBIRS"
+            ]
+        },
+        {
             "filename": "**/specification/batch/**/*.json",
             "words": [
                 "TVMs"
@@ -194,6 +209,12 @@
             ]
         },
         {
+            "filename": "**/specification/containerinstance/resource-manager/Microsoft.ContainerInstance/preview/**/containerInstance.json",
+            "words": [
+                "ngroups"
+            ]
+        },
+        {
             "filename": "**/specification/containerservice/resource-manager/Microsoft.ContainerService/aks/**/*json",
             "words": [
                 "vtpm",
@@ -201,7 +222,8 @@
                 "aksadvancednetworking",
                 "PDBs",
                 "undrainable",
-                "Undrainable"
+                "Undrainable",
+                "acnstls"
             ]
         },
         {
@@ -305,46 +327,40 @@
             ]
         },
         {
-            "filename": "**/specification/sql/resource-manager/Microsoft.Sql/preview/2023-08-01-preview/DistributedAvailabilityGroups.json",
+            "filename": "**/specification/sql/resource-manager/Microsoft.Sql/preview/**/DistributedAvailabilityGroups.json",
             "words": [
                 "freemium"
             ]
         },
-        {
-            "filename": "**/specification/sql/resource-manager/Microsoft.Sql/preview/2023-02-01-preview/ManagedInstances.json",
+		{
+            "filename": "**/specification/sql/resource-manager/Microsoft.Sql/preview/**/ManagedInstances.json",
             "words": [
                 "freemium"
             ]
         },
-        {
-            "filename": "**/specification/sql/resource-manager/Microsoft.Sql/preview/2023-05-01-preview/ManagedInstances.json",
+		{
+            "filename": "**/specification/sql/resource-manager/Microsoft.Sql/preview/**/ServerTrustCertificates.json",
             "words": [
                 "freemium"
             ]
         },
-        {
-            "filename": "**/specification/sql/resource-manager/Microsoft.Sql/preview/2023-08-01-preview/ManagedInstances.json",
-            "words": [
-                "freemium"
-            ]
-        },
-        {
-            "filename": "**/specification/sql/resource-manager/Microsoft.Sql/preview/2023-08-01-preview/ServerTrustCertificates.json",
-            "words": [
-                "freemium"
-            ]
-        },
-        {
-            "filename": "**/specification/sql/resource-manager/Microsoft.Sql/preview/2023-08-01-preview/ManagedInstanceDtcs.json",
+		{
+            "filename": "**/specification/sql/resource-manager/Microsoft.Sql/preview/**/ManagedInstanceDtcs.json",
             "words": [
                 "msdtcdns",
                 "msdtc's"
             ]
         },
-        {
-            "filename": "**/specification/sql/resource-manager/Microsoft.Sql/preview/2023-08-01-preview/TimeZones.json",
+		{
+            "filename": "**/specification/sql/resource-manager/Microsoft.Sql/preview/**/TimeZones.json",
             "words": [
                 "freemium"
+            ]
+        },
+		{
+            "filename": "**/specification/sql/resource-manager/Microsoft.Sql/preview/**/ElasticPools.json",
+            "words": [
+                "PRMS"
             ]
         },
         {
@@ -398,7 +414,13 @@
             ]
         },
         {
-            "filename": "**/specification/eventgrid/data-plane/Microsoft.EventGrid/stable/2024-01-01/SystemEvents.json",
+            "filename": "**/specification/eventgrid/data-plane/Microsoft.EventGrid/stable/2024-01-01/GeneratedSystemEvents.json",
+            "words": [
+                "whatsapp"
+            ]
+        },
+        {
+            "filename": "**/specification/eventgrid/data-plane/Microsoft.EventGrid/stable/2018-01-01/GeneratedSystemEvents.json",
             "words": [
                 "whatsapp"
             ]
@@ -442,7 +464,8 @@
         {
             "filename": "**/specification/netapp/**/*.json",
             "words": [
-                "SVMs"
+                "SVMs",
+                "kibibytes"
             ]
         },
         {
@@ -470,9 +493,10 @@
             ]
         },
         {
-            "filename": "**/specification/web/resource-manager/Microsoft.Web/stable/2023-12-01/WebApps.json",
+            "filename": "**/specification/web/resource-manager/Microsoft.Web/stable/**/WebApps.json",
             "words": [
-                "sitecontainers"
+                "sitecontainers",
+                "updatemachinekey"
             ]
         },
         {
@@ -851,6 +875,14 @@
             ]
         },
         {
+            "filename": "**/specification/cognitiveservices/data-plane/Speech/VideoTranslation/preview/2024-05-20-preview/VideoTranslation.json",
+            "words": [
+                "videotranslation",
+                "webvtt",
+                "Webvtt"
+            ]
+        },
+        {
             "filename": "**/specification/network/resource-manager/Microsoft.Network/stable/**/webapplicationfirewall.json",
             "words": [
                 "Conditon"
@@ -1017,6 +1049,12 @@
             ]
         },
         {
+            "filename": "**/specification/postgresql/resource-manager/Microsoft.DBforPostgreSQL/preview/**/*json",
+            "words": [
+                "automigration"
+            ]
+        },
+        {
             "filename": "**/specification/cognitiveservices/data-plane/FormRecognizer/**/FormRecognizer.json",
             "words": [
                 "heif",
@@ -1107,7 +1145,12 @@
                 "Groundedness",
                 "AOAI",
                 "testconnection",
-                "aoai"
+                "aoai",
+                "SecretExpiry",
+                "expirableSecret",
+                "expireAfterHours",
+                "expire",
+                "expirable"
             ]
         },
         {
@@ -1152,6 +1195,15 @@
             ]
         },
         {
+            "filename": "**/specification/cognitiveservices/data-plane/AzureOpenAI/inference/stable/**/*.json",
+            "words": [
+                "flac",
+                "FLAC",
+                "mpga",
+                "rerank"
+            ]
+        },
+        {
             "filename": "**/specification/appplatform/resource-manager/Microsoft.AppPlatform/preview/2024-01-01-preview/appplatform.json",
             "words": [
                 "springboot"
@@ -1160,6 +1212,7 @@
         {
             "filename": "**/specification/cosmos-db/resource-manager/Microsoft.DocumentDB/**/*.json",
             "words": [
+                "keyvaultkeyuri",
                 "throughputpool"
             ]
         },
@@ -1170,13 +1223,23 @@
             ]
         },
         {
+            "filename": "**/specification/healthdataaiservices/**/*.json",
+            "words": [
+                "deidentification",
+                "deidentify",
+                "surrogation"
+            ]
+        },
+        {
             "filename": "**/specification/search/data-plane/Azure.Search/**/*.json",
             "words": [
                 "rerank",
                 "discretizing",
                 "subscores",
                 "vectorizing",
-                "onelake"
+                "onelake",
+                "tiktoken",
+                "Matryoshka"
             ]
         },
         {
@@ -1290,7 +1353,7 @@
             ]
         },
         {
-            "filename": "**/specification/hybridcompute/resource-manager/Microsoft.HybridCompute/preview/**/*.json",
+            "filename": "**/specification/hybridcompute/resource-manager/Microsoft.HybridCompute/**/*.json",
             "words": [
                 "hotpatch"
             ]
@@ -1340,6 +1403,12 @@
             ]
         },
         {
+            "filename": "**/specification/cognitiveservices/data-plane/AzureOpenAI/authoring/preview/**/*.json",
+            "words": [
+                "wandb"
+            ]
+        },
+        {
             "filename": "**/specification/communication/data-plane/CallAutomation/**/*.json",
             "words": [
                 "unhold",
@@ -1352,6 +1421,45 @@
             "words": [
                 "systemversionname"
             ]
+        },
+        {
+            "filename": "**/specification/developerhub/resource-manager/Microsoft.DevHub/preview/**/workflow.json",
+            "words": [
+                "adooauth",
+                "ADOO"
+            ]
+        },
+        {
+            "filename": "**/specification/iotoperations/resource-manager/Microsoft.IoTOperations/**/*.json",
+            "words": [
+                "akri",
+                "opcua",
+                "websockets",
+                "opentelemetry",
+                "parquet",
+                "mqttbroker",
+                "schemaregistry"
+            ]
+        },
+        {
+            "filename": "**/specification/servicefabricmanagedclusters/resource-manager/Microsoft.ServiceFabric/**/*.json",
+            "words": [
+                "sfmc",
+                "sfmc's"
+            ]
+        },
+        {
+            "filename": "**/specification/terraform/resource-manager/Microsoft.AzureTerraform/**/*.json",
+            "words": [
+                "azurerm",
+                "azapi"
+            ]
+        },
+        {
+            "filename": "**/specification/deviceregistry/resource-manager/Microsoft.DeviceRegistry/**/*.json",
+            "words": [
+                "billables"
+            ]
         }
     ],
     "enableFiletypes": [
@@ -1360,4 +1468,5 @@
     "ignoreWords": [
         "trafficcontrollerspec"
     ]
+
 }
