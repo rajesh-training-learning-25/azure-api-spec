@@ -30,12 +30,8 @@ These settings apply only when `--tag=release_2024_11_15_preview` is specified o
 ``` yaml $(tag) == 'release_2024-11-15-preview'
 input-file:
   - preview/2024-11-15-preview/analyzeconversations.json
-  - preview/2024-11-15-preview/analyzetext.json
-  - preview/2024-11-15-preview/analyzetext-authoring.json
-  - preview/2024-11-15-preview/analyzeconversations-authoring.json
-  - preview/2024-11-15-preview/analyzedocuments.json
 title:
-  Microsoft Cognitive Language Service
+  Microsoft Cognitive Language Service - Conversations
 modelerfour:
   lenient-model-deduplication: true
 ```
@@ -47,9 +43,8 @@ These settings apply only when `--tag=release_2024_11_01` is specified on the co
 ``` yaml $(tag) == 'release_2024-11-01'
 input-file:
   - stable/2024-11-01/analyzeconversations.json
-  - stable/2024-11-01/analyzetext.json
 title:
-  Microsoft Cognitive Language Service
+  Microsoft Cognitive Language Service - Conversations
 modelerfour:
   lenient-model-deduplication: true
 ```
@@ -207,7 +202,6 @@ These settings apply only when `--tag=release_2021_11_01_preview` is specified o
 
 ``` yaml $(tag) == 'release_2021_11_01_preview'
 input-file:
-- preview/2021-11-01-preview/analyzetext.json
 - preview/2021-11-01-preview/analyzeconversations.json
 title:
   Microsoft Cognitive Language Service
