@@ -3482,8 +3482,10 @@
         }
       },
       "required": [
-        "target",
-        "connectedRegistry"
+        "id",
+        "action",
+        "location",
+        "target"
       ]
     },
     "ContainerRegistryEventRequest": {
@@ -6981,6 +6983,9 @@
         }
       },
       "required": [
+        "id",
+        "name",
+        "type",
         "properties"
       ]
     },

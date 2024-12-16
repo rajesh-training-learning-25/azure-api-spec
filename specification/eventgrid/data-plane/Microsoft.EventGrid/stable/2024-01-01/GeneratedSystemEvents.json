@@ -3550,8 +3550,9 @@
       "required": [
         "id",
         "timestamp",
-        "target",
-        "connectedRegistry"
+        "action",
+        "location",
+        "target"
       ]
     },
     "ContainerRegistryEventRequest": {
@@ -7109,6 +7110,9 @@
         }
       },
       "required": [
+        "id",
+        "name",
+        "type",
         "properties"
       ]
     },
