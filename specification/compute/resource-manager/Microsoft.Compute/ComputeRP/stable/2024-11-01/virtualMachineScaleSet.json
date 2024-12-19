@@ -404,13 +404,13 @@
             "required": false,
             "type": "boolean",
             "description": "Optional parameter to force delete a VM scale set. (Feature in Preview)"
-          },
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/SubscriptionIdParameter"
           }
+            {
+              "$ref": "../../../common-types/v1/common.json#/parameters/ApiVersionParameter"
+            },
+            {
+              "$ref": "../../../common-types/v1/common.json#/parameters/SubscriptionIdParameter"
+            }
         ],
         "responses": {
           "200": {
