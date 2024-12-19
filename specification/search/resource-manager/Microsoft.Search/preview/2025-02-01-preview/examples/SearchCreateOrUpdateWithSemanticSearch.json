@@ -57,7 +57,10 @@
             "apiKeyOnly": {}
           },
           "disabledDataExfiltrationOptions": [],
-          "semanticSearch": "free"
+          "semanticSearch": "free",
+          "upgradeAvailable": false,
+          "serviceCreatedDate": "2025-02-01T00:00:00Z",
+          "serviceUpgradedDate": null
         }
       }
     },
@@ -97,7 +100,10 @@
             "apiKeyOnly": {}
           },
           "disabledDataExfiltrationOptions": [],
-          "semanticSearch": "free"
+          "semanticSearch": "free",
+          "upgradeAvailable": false,
+          "serviceCreatedDate": "2025-02-01T00:00:00Z",
+          "serviceUpgradedDate": null
         }
       }
     }

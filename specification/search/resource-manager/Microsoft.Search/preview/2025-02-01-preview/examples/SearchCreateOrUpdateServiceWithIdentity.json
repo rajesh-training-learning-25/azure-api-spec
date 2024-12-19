@@ -61,7 +61,10 @@
           "authOptions": {
             "apiKeyOnly": {}
           },
-          "disabledDataExfiltrationOptions": []
+          "disabledDataExfiltrationOptions": [],
+          "upgradeAvailable": false,
+          "serviceCreatedDate": "2025-02-01T00:00:00Z",
+          "serviceUpgradedDate": null
         },
         "identity": {
           "type": "SystemAssigned, UserAssigned",
@@ -111,7 +114,10 @@
           "authOptions": {
             "apiKeyOnly": {}
           },
-          "disabledDataExfiltrationOptions": []
+          "disabledDataExfiltrationOptions": [],
+          "upgradeAvailable": false,
+          "serviceCreatedDate": "2025-02-01T00:00:00Z",
+          "serviceUpgradedDate": null
         },
         "identity": {
           "type": "SystemAssigned, UserAssigned",
