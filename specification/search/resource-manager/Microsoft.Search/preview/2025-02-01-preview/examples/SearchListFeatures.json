@@ -1,0 +1,77 @@
+{
+  "parameters": {
+    "api-version": "2025-02-01-preview"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "regions": [
+          {
+            "regionName": "East US",
+            "features": [
+              {
+                "name": "semanticRanker"
+              },
+              {
+                "name": "queryRewriting"
+              }
+            ],
+            "skus": [
+              {
+                "name": "standard",
+                "limits": {
+                  "indexes": 50,
+                  "indexers": 50,
+                  "partitionStorageInGigabytes": 160,
+                  "partitionVectorStorageInGigabytes": 35,
+                  "searchUnits": 36,
+                  "replicas": 12,
+                  "partitions": 12
+                }
+              },
+              {
+                "name": "premium",
+                "limits": {
+                  "indexes": 200,
+                  "indexers": 200,
+                  "partitionStorageInGigabytes": 1000,
+                  "partitionVectorStorageInGigabytes": 200,
+                  "searchUnits": 36,
+                  "replicas": 12,
+                  "partitions": 12
+                }
+              }
+            ]
+          },
+          {
+            "regionName": "West Europe",
+            "features": [
+              {
+                "name": "grok"
+              },
+              {
+                "name": "imageVectorization"
+              }
+            ],
+            "skus": [
+              {
+                "name": "standard",
+                "limits": {
+                  "partitionStorageInGigabytes": 150,
+                  "partitionVectorStorageInGigabytes": 30
+                }
+              },
+              {
+                "name": "enterprise",
+                "limits": {
+                  "partitionStorageInGigabytes": 1000,
+                  "partitionVectorStorageInGigabytes": 200
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
