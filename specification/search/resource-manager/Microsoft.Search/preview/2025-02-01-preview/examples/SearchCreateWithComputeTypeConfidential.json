@@ -15,9 +15,8 @@
       "properties": {
         "replicaCount": 3,
         "partitionCount": 1,
-        "publicNetworkAccess": "disabled",
         "hostingMode": "default",
-        "computeType": "default"
+        "computeType": "confidential"
       }
     }
   },
@@ -37,13 +36,12 @@
         "properties": {
           "replicaCount": 3,
           "partitionCount": 1,
-          "endpoint": "https://mysearchservice.search.windows.net/",
           "status": "provisioning",
           "statusDetails": "",
           "hostingMode": "default",
-          "computeType": "default",
+          "computeType": "confidential",
           "provisioningState": "Provisioning",
-          "publicNetworkAccess": "disabled",
+          "publicNetworkAccess": "enabled",
           "networkRuleSet": {
             "ipRules": [],
             "bypass": "None"
@@ -58,16 +56,7 @@
           "authOptions": {
             "apiKeyOnly": {}
           },
-          "disabledDataExfiltrationOptions": [],
-          "upgradeAvailable": false,
-          "systemData": {
-            "createdBy": "My e-commerce app",
-            "createdByType": "Application",
-            "createdAt": "2024-01-01T00:00:00Z",
-            "lastModifiedBy": "fakeuser@contoso.com",
-            "lastModifiedByType": "User",
-            "lastModifiedAt": "2024-11-01T00:00:00Z"
-          }
+          "disabledDataExfiltrationOptions": []
         }
       }
     },
@@ -86,13 +75,12 @@
         "properties": {
           "replicaCount": 3,
           "partitionCount": 1,
-          "endpoint": "https://mysearchservice.search.windows.net/",
           "status": "provisioning",
           "statusDetails": "",
           "hostingMode": "default",
-          "computeType": "default",
+          "computeType": "confidential",
           "provisioningState": "Provisioning",
-          "publicNetworkAccess": "disabled",
+          "publicNetworkAccess": "enabled",
           "networkRuleSet": {
             "ipRules": [],
             "bypass": "None"
@@ -107,16 +95,7 @@
           "authOptions": {
             "apiKeyOnly": {}
           },
-          "disabledDataExfiltrationOptions": [],
-          "upgradeAvailable": false,
-          "systemData": {
-            "createdBy": "My e-commerce app",
-            "createdByType": "Application",
-            "createdAt": "2024-01-01T00:00:00Z",
-            "lastModifiedBy": "fakeuser@contoso.com",
-            "lastModifiedByType": "User",
-            "lastModifiedAt": "2024-11-01T00:00:00Z"
-          }
+          "disabledDataExfiltrationOptions": []
         }
       }
     }

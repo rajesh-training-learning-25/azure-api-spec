@@ -1550,6 +1550,54 @@
           }
         }
       }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Search/searchServices/{searchServiceName}/upgrade": {
+      "post": {
+        "tags": [
+          "Services"
+        ],
+        "operationId": "Service_Upgrade",
+        "x-ms-examples": {
+          "UpgradeSearchServiceToLatestVersion": {
+            "$ref": "./examples/UpgradeSearchServiceToLatestVersion.json"
+          }
+        },
+        "description": "Upgrades service to latest version available",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/SearchServiceNameParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The long running operation for upgrading the service to the latest version was queued successfully. You can check the status of the operation through the provisioningState property of a Get Service request.",
+            "schema": {
+              "$ref": "#/definitions/SearchService"
+            }
+          },
+          "400": {
+            "description": "There is not upgrade available for the current service."
+          },
+          "404": {
+            "description": "The subscription or resource group could not be found."
+          },
+          "default": {
+            "description": "An unexpected error occurred during the operation.",
+            "schema": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -2444,6 +2492,31 @@
             ]
           }
         },
+        "computeType": {
+          "type": "string",
+          "default": "default",
+          "description": "Configure this property to support the search service using either the default compute or Azure Confidential Compute.",
+          "enum": [
+            "default",
+            "confidential"
+          ],
+          "x-ms-enum": {
+            "name": "ComputeType",
+            "modelAsString": true,
+            "values": [
+              {
+                "value": "default",
+                "name": "Default",
+                "description": "Create the service with the default compute."
+              },
+              {
+                "value": "confidential",
+                "name": "Confidential",
+                "description": "Create the service with Azure Confidential Compute."
+              }
+            ]
+          }
+        },
         "publicNetworkAccess": {
           "type": "string",
           "default": "enabled",
@@ -2609,6 +2682,16 @@
           "readOnly": true,
           "type": "string",
           "description": "A system generated property representing the service's etag that can be for optimistic concurrency control during updates."
+        },
+        "upgradeAvailable": {
+          "readOnly": true,
+          "type": "boolean",
+          "description": "Indicates whether or not the search service has an upgrade available."
+        },
+        "systemData": {
+          "readOnly": true,
+          "description": "The system meta data relating to this resource.",
+          "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/systemData"
         }
       },
       "description": "Properties of the search service."
@@ -3290,13 +3373,33 @@
                     "limits": {
                       "type": "object",
                       "properties": {
+                        "indexes": {
+                          "type": "integer",
+                          "description": "The maximum number of indexes available for this SKU."
+                        },
+                        "indexers": {
+                          "type": "integer",
+                          "description": "The maximum number of indexers available for this SKU."
+                        },
                         "partitionStorageInGigabytes": {
                           "type": "integer",
-                          "description": "The maximum partition storage in Gigabytes available in this region."
+                          "description": "The maximum storage size in Gigabytes available for this SKU per partition."
                         },
                         "partitionVectorStorageInGigabytes": {
                           "type": "integer",
-                          "description": "The maximum partition vector storage in Gigabytes available in this region."
+                          "description": "The maximum vector storage size in Gigabytes available for this SKU per partition."
+                        },
+                        "searchUnits": {
+                          "type": "integer",
+                          "description": "The maximum number of search units available for this SKU."
+                        },
+                        "replicas": {
+                          "type": "integer",
+                          "description": "The maximum number of replicas available for this SKU."
+                        },
+                        "partitions": {
+                          "type": "integer",
+                          "description": "The maximum number of partitions available for this SKU."
                         }
                       },
                       "description": "The limits associated with this SKU in this region."
